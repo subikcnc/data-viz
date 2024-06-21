@@ -1,11 +1,10 @@
-[
-    {
+[{
         "dataKey": "2024-01-01",
-        "dataValue": 80
+        "dataValue": 0
     },
     {
         "dataKey": "2024-01-02",
-        "dataValue": 80
+        "dataValue": 15
     },
     {
         "dataKey": "2024-01-03",
@@ -45,6 +44,18 @@
     },
     {
         "dataKey": "2024-01-12",
-        "dataValue": 59
+        "dataValue": 70
+    },
+    {
+        "dataKey": "2024-01-13",
+        "dataValue": 60
+    },
+    {
+        "dataKey": "2024-01-14",
+        "dataValue": 20
+    },
+    {
+        "dataKey": "2024-01-15",
+        "dataValue": 0
     }
 ]

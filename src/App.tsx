@@ -14,6 +14,7 @@ import { schemeTableau10 } from 'd3-scale-chromatic'
 import PieChart from './components/d3components/Pie/PieChart'
 import BasicBarChart from './components/d3components/BasicBarChart/BasicBarChart'
 import BasicBarChartLog from './components/d3components/BasicBarChartLog/BasicBarChartLog'
+import BasicBarLineChart from './components/d3components/BasicBarLineChart/BasicBarLineChart'
 
 // Dummy data for chart
 
@@ -57,14 +58,16 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <h1>Bar and Line Combo chart</h1>
+      <BasicBarLineChart width={1400} height={650} margin={{top: 25, right: 40, bottom: 40, left: 40}}/>
       <h1>Basic Bar Chart Linear YScale</h1>
       <BasicBarChart width={1200} height={450} margin={{top: 25, right: 25, bottom: 25, left: 25}} />
       <h1>Basic Bar Chart Log YScale</h1>
       <BasicBarChartLog  width={1200} height={450} margin={{top: 25, right: 30, bottom: 25, left: 30}}/>
       <h1>Pie Chart</h1>
-      <PieChart width={960} height={600} />
+      <PieChart width={1200} height={600} />
       <h1 className="mt-8">Donut Chart</h1>
-      <PieChart width={960} height={600} type='donut' />
+      <PieChart width={1200} height={600} type='donut' />
       
       <CirclesGapMinder data={gapData} colorScale={color} year={selectedYear.x} onSliderChange={handleSliderChange} continents={continents} selectedContinent={selectedContinent}  setContinent={handleLegendClick}/>
       {/* <Circles /> */}

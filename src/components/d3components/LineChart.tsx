@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import * as d3 from "d3";
 
-const width = 650;
+const width = 1200;
 const height = 650;
 const margin = { top: 20, right: 5, bottom: 20, left: 35 };
 
@@ -31,6 +31,7 @@ const D3LineChart = ({ data }: D3LineChartProps) => {
      // Get the min and max of temperatures, yExtent
      const highMax = d3.max(parsedData, d => d.high) as number;
      const lowMin = d3.min(parsedData, d => d.low) as number;
+     console.log('high max and low min', highMax, lowMin);
      // const [min, max] = d3.extent(data, d => d.high)
 
      // Get the xExtent

@@ -23,7 +23,7 @@ const BasicBarChart = ({width=960, height=650, margin}: BasicBarChartProps) => {
   const xScaleRef = useRef()
   const yScaleRef = useRef()
   // Get the SVG ref using useRef
-  const svgRef = useRef(null);
+  const svgRef = useRef<SVGSVGElement | null>(null);
   // 1 First lets modify the data to convert dataKey string to Dates
   const parsedData = useMemo(() => {
     return data.map(d => ({ ...d, dataKey: new Date(d.dataKey) }));
@@ -43,8 +43,8 @@ const BasicBarChart = ({width=960, height=650, margin}: BasicBarChartProps) => {
   useEffect(() => {
     if(!bars.length) return
     const formatTime = timeFormat("%d %b %Y");
-    select('.bar-chart-basic .yAxis').call(axisLeft(yScaleRef.current).ticks(8))
-    select('.bar-chart-basic .xAxis').call(axisBottom(xScaleRef.current).ticks(parsedData.length-1).tickFormat(formatTime))
+    select('.bar-chart-basic .yAxis').transition().duration(250).call(axisLeft(yScaleRef.current).ticks(10))
+    select('.bar-chart-basic .xAxis').transition().duration(250).call(axisBottom(xScaleRef.current).tickFormat(formatTime))
   },[bars, parsedData])
   return (
     <svg ref={svgRef} width={width} height={height} viewBox={`0 0 ${width} ${height}`} className='bar-chart-basic'>
